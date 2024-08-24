@@ -6,3 +6,6 @@ check-running-containers:
 
 logs:
 	docker compose logs
+
+down:
+	docker compose down
