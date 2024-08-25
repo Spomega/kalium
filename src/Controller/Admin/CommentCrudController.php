@@ -41,8 +41,8 @@ class CommentCrudController extends AbstractCrudController
        yield AssociationField::new('conference');
        yield TextField::new('author');
        yield EmailField::new('email');
-       yield TextareaField::new('text')->hideOnIndex();
-       yield TextField::new('photoFilename')->onlyOnIndex();
+       yield TextareaField::new('text');
+       yield TextField::new('photoFilename')->hideOnIndex();
 
        $createdAt = DateTimeField::new('createdAt')->setFormTypeOptions([
            'years' => range(date('Y'),date('Y') + 5),
