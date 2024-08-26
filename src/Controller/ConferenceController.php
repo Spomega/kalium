@@ -13,7 +13,7 @@ use Twig\Environment;
 
 class ConferenceController extends AbstractController
 {
-    #[Route('/', name: 'app_conference')]
+    #[Route('/', name: 'homepage')]
     public function index(Environment $twig,ConferenceRepository $conferenceRepository ): Response
     {
         return $this->render('conference/index.html.twig',[
