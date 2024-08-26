@@ -5,7 +5,6 @@ namespace App\Repository;
 use App\Entity\Comment;
 use App\Entity\Conference;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
-use Doctrine\Common\Collections\Criteria;
 use Doctrine\ORM\Tools\Pagination\Paginator;
 use Doctrine\Persistence\ManagerRegistry;
 
@@ -30,7 +29,7 @@ class CommentRepository extends ServiceEntityRepository
             ->setParameter('conference',$conference)
             ->orderBy('c.createdAt','DESC')
             ->setMaxResults(self::COMMENTS_PER_PAGE)
-            ->getFirstResult($offset)
+            ->setFirstResult($offset)
             ->getQuery();
 
         return  new Paginator($query);
