@@ -2,15 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dce18439-8dd7-4dfd-a08d-ce24eb108f33" name="Default Changelist" comment="added added doctrine events">
-      <change afterPath="$PROJECT_DIR$/migrations/Version20240827123720.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/migrations/Version20240827133102.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/migrations/Version20240827133107.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/EntityListener/ConferenceEntityListener.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/CommentCrudController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/CommentCrudController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Comment.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Comment.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/ConferenceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ConferenceController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/Conference.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Conference.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/ConferenceRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/ConferenceRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/conference/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/conference/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/conference/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/conference/show.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -213,7 +212,7 @@
       <option name="presentableId" value="Default" />
       <updated>1724015831584</updated>
       <workItem from="1724015833676" duration="155000" />
-      <workItem from="1724341701413" duration="64837000" />
+      <workItem from="1724341701413" duration="68821000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1724343509622</created>
@@ -299,7 +298,14 @@
       <option name="project" value="LOCAL" />
       <updated>1724634039555</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="added added doctrine events">
+      <created>1724775407009</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1724775407015</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

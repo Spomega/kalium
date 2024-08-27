@@ -16,5 +16,12 @@ create-migration-entity:
 migrate:
 	symfony console doctrine:migration:migrate
 
+symfony-up:
+	symfony server:start -d
+
+symfony-down:
+	symfony server-stop
+
+
 
 
