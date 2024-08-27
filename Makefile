@@ -9,3 +9,12 @@ logs:
 
 down:
 	docker compose down
+
+create-migration-entity:
+	symfony console make:migration
+
+migrate:
+	symfony console doctrine:migration:migrate
+
+
+
