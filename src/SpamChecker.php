@@ -16,7 +16,7 @@ class SpamChecker
         private HttpClientInterface $client,
         #[Autowire('%env(AKISMET_KEY)%')]string $akismetKey)
     {
-        $this->endpoint = sprintf('https://%s.rest.akismet.com/1/1/comment-check',$akismetKey);
+        $this->endpoint = sprintf('https://%s.rest.akismet.com/1.1/comment-check',$akismetKey);
     }
 
     /**
