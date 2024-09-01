@@ -11,11 +11,16 @@ RUN apt-get update && apt-get install -y \
     unzip \
     && docker-php-ext-install pdo pdo_pgsql
 
-# Enable Apache mod_rewrite
-RUN a2enmod rewrite
 
-# Set the document root to the public directory
-RUN sed -i 's!/var/www/html!/var/www/kalium/public!g' /etc/apache2/sites-available/000-default.conf
+# apache config
+ADD app.kalium.conf /etc/apache2/sites-available/
+
+RUN a2ensite app.kalium.conf && \
+    a2dissite 000-default.conf && \
+    a2dissite default-ssl.conf
+
+# Enable Apache mod_rewrite
+ RUN a2enmod rewrite
 
 # Install Composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
