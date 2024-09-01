@@ -2,7 +2,7 @@
 FROM php:8.3-apache
 
 # Set working directory
-WORKDIR /var/www/html
+WORKDIR /var/www/kalium
 
 # Install necessary PHP extensions and tools
 RUN apt-get update && apt-get install -y \
@@ -14,17 +14,20 @@ RUN apt-get update && apt-get install -y \
 # Enable Apache mod_rewrite
 RUN a2enmod rewrite
 
+# Set the document root to the public directory
+RUN sed -i 's!/var/www/html!/var/www/kalium/public!g' /etc/apache2/sites-available/000-default.conf
+
 # Install Composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
 # Copy the Symfony project files to the container
-COPY . .
+COPY . /var/www/kalium
 
 # Install PHP dependencies
 RUN composer install --no-interaction --optimize-autoloader
 
 # Set proper permissions
-RUN chown -R www-data:www-data /var/www/html/var
+RUN chown -R www-data:www-data /var/www/kalium/var
 
 # Expose port 80
 EXPOSE 80
