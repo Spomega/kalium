@@ -10,17 +10,16 @@ use Twig\Environment;
 
 class TwigEventSubscriber implements EventSubscriberInterface
 {
-
     public function __construct(
         private Environment $twig,
         private ConferenceRepository $conferenceRepository
-    ){}
+    ) {
+    }
 
 
     public function onKernelController(ControllerEvent $event): void
     {
-        $this->twig->addGlobal('conferences',$this->conferenceRepository->findAll());
-
+        $this->twig->addGlobal('conferences', $this->conferenceRepository->findAll());
     }
 
     public static function getSubscribedEvents(): array
@@ -29,6 +28,4 @@ class TwigEventSubscriber implements EventSubscriberInterface
             KernelEvents::CONTROLLER => 'onKernelController',
         ];
     }
-
-
 }

@@ -1,8 +1,6 @@
 <?php
 
-
 namespace App;
-
 
 use App\Entity\Comment;
 use Symfony\Component\DependencyInjection\Attribute\Autowire;
@@ -14,9 +12,9 @@ class SpamChecker
 
     public function __construct(
         private HttpClientInterface $client,
-        #[Autowire('%env(AKISMET_KEY)%')]string $akismetKey)
-    {
-        $this->endpoint = sprintf('https://%s.rest.akismet.com/1.1/comment-check',$akismetKey);
+        #[Autowire('%env(AKISMET_KEY)%')]string $akismetKey
+    ) {
+        $this->endpoint = sprintf('https://%s.rest.akismet.com/1.1/comment-check', $akismetKey);
     }
 
     /**
@@ -24,9 +22,9 @@ class SpamChecker
      *
      * @throws \RuntimeException if the call did not work
      */
-    public function getSpamScore(Comment $comment, array $context):int
+    public function getSpamScore(Comment $comment, array $context): int
     {
-        $response = $this->client->request('POST',$this->endpoint,[
+        $response = $this->client->request('POST', $this->endpoint, [
             'body' => array_merge($context, [
                 'blog' => 'https://kalium.example.com',
                 'comment_type' => 'comment',
@@ -41,16 +39,15 @@ class SpamChecker
         ]);
 
         $headers = $response->getHeaders();
-        if('discard' === ($headers['x-akismet-pro-tip'][0] ?? '')) {
+        if ('discard' === ($headers['x-akismet-pro-tip'][0] ?? '')) {
             return 2;
         }
 
         $content = $response->getContent();
-        if(isset($headers['x-akismet-debug-help'][0])) {
-            throw new \RuntimeException((sprintf('Unable to check for spam: %s (%s)',$content, $headers['x-akismet-debug-help'][0])));
+        if (isset($headers['x-akismet-debug-help'][0])) {
+            throw new \RuntimeException((sprintf('Unable to check for spam: %s (%s)', $content, $headers['x-akismet-debug-help'][0])));
         }
 
         return  'true' === $content ? 1 : 0;
     }
-
 }

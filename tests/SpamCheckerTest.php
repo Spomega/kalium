@@ -19,12 +19,12 @@ class SpamCheckerTest extends TestCase
         $comment->setCreatedAt();
         $context = [];
 
-        $client = new MockHttpClient([new MockResponse('invalid',['response_headers' => ['x-akismet-debug-help: Invalid key']])]);
+        $client = new MockHttpClient([new MockResponse('invalid', ['response_headers' => ['x-akismet-debug-help: Invalid key']])]);
         $checker =  new SpamChecker($client, 'abcde');
 
         $this->expectException(\RuntimeException::class);
         $this->expectExceptionMessage('Unable to check for spam: invalid (Invalid key)');
-        $checker->getSpamScore($comment,$context);
+        $checker->getSpamScore($comment, $context);
     }
 
     /**
@@ -40,7 +40,7 @@ class SpamCheckerTest extends TestCase
 
         $checker = new SpamChecker($client, 'abcde');
 
-        $score = $checker->getSpamScore($comment,$context);
+        $score = $checker->getSpamScore($comment, $context);
         static::assertSame($expectedScore, $score);
     }
 
@@ -50,7 +50,7 @@ class SpamCheckerTest extends TestCase
         $comment->setCreatedAt();
         $context = [];
 
-        $response =  new MockResponse('',['response_headers' => ['x-akismet-pro-tip: discard']]);
+        $response =  new MockResponse('', ['response_headers' => ['x-akismet-pro-tip: discard']]);
         yield 'blatant_spam' =>  [2,$response,$comment,$context];
 
         $response = new MockResponse('true');
@@ -58,9 +58,5 @@ class SpamCheckerTest extends TestCase
 
         $response = new MockResponse('false');
         yield 'ham' => [0, $response, $comment, $context];
-
-
     }
-
-
 }

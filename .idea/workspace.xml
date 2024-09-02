@@ -1,10 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="dce18439-8dd7-4dfd-a08d-ce24eb108f33" name="Default Changelist" comment="added added code sniffer">
-      <change afterPath="$PROJECT_DIR$/phpcs.xml.dist" afterDir="false" />
+    <list default="true" id="dce18439-8dd7-4dfd-a08d-ce24eb108f33" name="Default Changelist" comment="checked code to meet PSR12 standards">
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ruleset.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ruleset.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/CommentCrudController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/CommentCrudController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/DashboardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/DashboardController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/ConferenceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ConferenceController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/EntityListener/ConferenceEntityListener.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/EntityListener/ConferenceEntityListener.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/EventSubscriber/TwigEventSubscriber.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/EventSubscriber/TwigEventSubscriber.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/CommentType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/CommentType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/CommentRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/CommentRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/ConferenceRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/ConferenceRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SpamChecker.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/SpamChecker.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/SpamCheckerTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/SpamCheckerTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/bootstrap.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/bootstrap.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -231,7 +243,7 @@
       <updated>1724015831584</updated>
       <workItem from="1724015833676" duration="155000" />
       <workItem from="1724341701413" duration="124972000" />
-      <workItem from="1725303627368" duration="3429000" />
+      <workItem from="1725303627368" duration="5091000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1724343509622</created>
@@ -401,7 +413,14 @@
       <option name="project" value="LOCAL" />
       <updated>1725307910420</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="added added code sniffer">
+      <created>1725309412152</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1725309412152</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -436,7 +455,8 @@
     <MESSAGE value="added added secrets" />
     <MESSAGE value="added added doccker setup" />
     <MESSAGE value="added added code sniffer" />
-    <option name="LAST_COMMIT_MESSAGE" value="added added code sniffer" />
+    <MESSAGE value="checked code to meet PSR12 standards" />
+    <option name="LAST_COMMIT_MESSAGE" value="checked code to meet PSR12 standards" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

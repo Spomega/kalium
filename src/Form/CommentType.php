@@ -22,7 +22,7 @@ class CommentType extends AbstractType
                 'label' => 'Your name',
             ])
             ->add('text')
-            ->add('email',EmailType::class)
+            ->add('email', EmailType::class)
             ->add('photo', FileType::class, [
                 'required' => false,
                 'mapped' => false,
@@ -30,7 +30,7 @@ class CommentType extends AbstractType
                     new Image(['maxSize' => '2048k'])
                 ]
             ])
-            ->add('submit',SubmitType::class)
+            ->add('submit', SubmitType::class)
         ;
     }
 

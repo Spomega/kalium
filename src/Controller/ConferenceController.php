@@ -18,21 +18,17 @@ use Twig\Environment;
 
 class ConferenceController extends AbstractController
 {
-
     public function __construct(
         private EntityManagerInterface $em
-    )
-    {
+    ) {
     }
 
     #[Route('/', name: 'homepage')]
-    public function index(ConferenceRepository $conferenceRepository ): Response
+    public function index(ConferenceRepository $conferenceRepository): Response
     {
-        return $this->render('conference/index.html.twig',[
+        return $this->render('conference/index.html.twig', [
                 'conferences' => $conferenceRepository->findAll(),
             ]);
-
-
     }
 
     #[Route('/conference/{slug}', name: 'conference')]
@@ -42,17 +38,16 @@ class ConferenceController extends AbstractController
         CommentRepository $commentRepository,
         SpamChecker $spamChecker,
         #[Autowire('%photo_dir%')] string $photoDir
-    ) : Response
-    {
+    ): Response {
         $comment =  new Comment();
         $form = $this->createForm(CommentType::class, $comment);
 
         $form->handleRequest($request);
-        if($form->isSubmitted() && $form->isValid()) {
+        if ($form->isSubmitted() && $form->isValid()) {
             $comment->setConference($conference);
 
-            if($photo = $form['photo']->getData()) {
-                $filename = bin2hex(random_bytes(6)). '.'.$photo->guessExtension();
+            if ($photo = $form['photo']->getData()) {
+                $filename = bin2hex(random_bytes(6)) . '.' . $photo->guessExtension();
                 $photo->move($photoDir, $filename);
                 $comment->setPhotoFilename($filename);
             }
@@ -66,25 +61,24 @@ class ConferenceController extends AbstractController
                 'permalink' => $request->getUri(),
             ];
 
-            if(2 === $spamChecker->getSpamScore($comment, $context)) {
+            if (2 === $spamChecker->getSpamScore($comment, $context)) {
                 throw new \RuntimeException('Blatant spam, go away!');
             }
 
             $this->em->flush();
 
-            return  $this->redirectToRoute('conference',['slug' => $conference->getSlug()]);
+            return  $this->redirectToRoute('conference', ['slug' => $conference->getSlug()]);
         }
 
-        $offset = max(0,$request->query->getInt('offset',0));
+        $offset = max(0, $request->query->getInt('offset', 0));
         $paginator = $commentRepository->getCommentPaginator($conference, $offset);
 
-        return $this->render('conference/show.html.twig',[
+        return $this->render('conference/show.html.twig', [
             'conference' => $conference,
             'comments' => $paginator,
             'previous' => $offset - CommentRepository::COMMENTS_PER_PAGE,
-            'next' => min(count($paginator),$offset + CommentRepository::COMMENTS_PER_PAGE),
+            'next' => min(count($paginator), $offset + CommentRepository::COMMENTS_PER_PAGE),
             'comment_form' => $form,
         ]);
     }
-
 }
