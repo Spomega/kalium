@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="dce18439-8dd7-4dfd-a08d-ce24eb108f33" name="Default Changelist" comment="added added secrets">
-      <change afterPath="$PROJECT_DIR$/app.kalium.conf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+    <list default="true" id="dce18439-8dd7-4dfd-a08d-ce24eb108f33" name="Default Changelist" comment="added added code sniffer">
+      <change afterPath="$PROJECT_DIR$/ruleset.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/kalium.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/kalium.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/compose.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
@@ -177,6 +176,9 @@
       <path value="$PROJECT_DIR$/vendor/easycorp/easyadmin-bundle" />
       <path value="$PROJECT_DIR$/vendor/twig/intl-extra" />
       <path value="$PROJECT_DIR$/vendor/symfony/apache-pack" />
+      <path value="$PROJECT_DIR$/vendor/squizlabs/php_codesniffer" />
+      <path value="$PROJECT_DIR$/vendor/dealerdirect/phpcodesniffer-composer-installer" />
+      <path value="$PROJECT_DIR$/vendor/slevomat/coding-standard" />
     </include_path>
   </component>
   <component name="ProjectId" id="2kqf3flcZ7Fv02OW4luKpPVdWJM" />
@@ -234,7 +236,8 @@
       <option name="presentableId" value="Default" />
       <updated>1724015831584</updated>
       <workItem from="1724015833676" duration="155000" />
-      <workItem from="1724341701413" duration="123529000" />
+      <workItem from="1724341701413" duration="124972000" />
+      <workItem from="1725303627368" duration="2829000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1724343509622</created>
@@ -390,7 +393,14 @@
       <option name="project" value="LOCAL" />
       <updated>1725212594403</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="added added doccker setup">
+      <created>1725229254145</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1725229254149</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -406,6 +416,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="initial commit" />
@@ -422,7 +433,9 @@
     <MESSAGE value="added added forms" />
     <MESSAGE value="added added security login" />
     <MESSAGE value="added added secrets" />
-    <option name="LAST_COMMIT_MESSAGE" value="added added secrets" />
+    <MESSAGE value="added added doccker setup" />
+    <MESSAGE value="added added code sniffer" />
+    <option name="LAST_COMMIT_MESSAGE" value="added added code sniffer" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
