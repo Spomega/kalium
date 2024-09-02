@@ -1,0 +1,30 @@
+<?xml version="1.0" ?>
+<ruleset name="Kalium-CS">
+
+    <description>TS-API coding standard for PHP project</description>
+    <config name="installed_paths" value="vendor/slevomat/coding-standard/"/>
+
+
+    <!-- Include the Slevomat coding standard -->
+    <rule ref="SlevomatCodingStandard"/>
+
+    <!-- Optionally include some other standards -->
+    <rule ref="PSR12"/>
+    <rule ref="Generic"/>
+
+    <!-- Customizations -->
+    <rule ref="SlevomatCodingStandard.Arrays.DisallowImplicitArrayCreation"/>
+    <rule ref="SlevomatCodingStandard.Classes.UnusedPrivateElements"/>
+    <rule ref="SlevomatCodingStandard.ControlStructures.RequireNullCoalesceOperator"/>
+
+    <!-- Exclude specific rules if needed -->
+    <exclude name="SlevomatCodingStandard.Classes.SuperfluousAbstractClassNaming"/>
+    <exclude name="SlevomatCodingStandard.Namespaces.UnusedUses"/>
+
+    <!-- Define custom rules -->
+    <rule ref="Generic.WhiteSpace.DisallowTabIndent">
+        <properties>
+            <property name="indent" value="4"/>
+        </properties>
+    </rule>
+</ruleset>
