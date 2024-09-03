@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="dce18439-8dd7-4dfd-a08d-ce24eb108f33" name="Default Changelist" comment="checked code to meet PSR12 standards">
-      <change afterPath="$PROJECT_DIR$/.github/workflows/quality-check-testing.yaml" afterDir="false" />
+    <list default="true" id="dce18439-8dd7-4dfd-a08d-ce24eb108f33" name="Default Changelist" comment="added github actions">
+      <change beforePath="$PROJECT_DIR$/.github/workflows/quality-check-testing.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/quality-check-testing.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -230,7 +230,7 @@
       <updated>1724015831584</updated>
       <workItem from="1724015833676" duration="155000" />
       <workItem from="1724341701413" duration="124972000" />
-      <workItem from="1725303627368" duration="6112000" />
+      <workItem from="1725303627368" duration="7900000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1724343509622</created>
@@ -414,7 +414,14 @@
       <option name="project" value="LOCAL" />
       <updated>1725311862424</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="added github actions">
+      <created>1725314758119</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1725314758120</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -450,7 +457,8 @@
     <MESSAGE value="added added doccker setup" />
     <MESSAGE value="added added code sniffer" />
     <MESSAGE value="checked code to meet PSR12 standards" />
-    <option name="LAST_COMMIT_MESSAGE" value="checked code to meet PSR12 standards" />
+    <MESSAGE value="added github actions" />
+    <option name="LAST_COMMIT_MESSAGE" value="added github actions" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
