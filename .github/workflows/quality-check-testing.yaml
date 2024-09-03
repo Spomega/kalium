@@ -19,6 +19,10 @@ jobs:
           extensions: mbstring, intl, pdo, xml, ctype, json
           tools: composer
       # Install dependencies
-      - name: Run PHP_CodeSniffer
+      - name: Install dependencies
+        run: composer install --prefer-dist --no-progress --no-suggest --no-interaction
+
+      # Code quality checks
+      - name: Run validate Code
         run:  |
           vendor/bin/phpcs --standard=ruleset.xml --extensions=php --tab-width=4 -sp src tests
