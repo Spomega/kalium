@@ -22,7 +22,7 @@ symfony-up:
 symfony-down:
 	symfony server-stop
 
-fix-PSR12-code-violations:
+fix-code-violations:
 	vendor/bin/phpcbf --standard=ruleset.xml --extensions=php --tab-width=4 -sp src tests
 
 code-sniffer:
