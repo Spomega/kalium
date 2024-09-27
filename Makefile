@@ -28,6 +28,14 @@ fix-code-violations:
 code-sniffer:
 	vendor/bin/phpcs --standard=ruleset.xml --extensions=php --tab-width=4 -sp src tests
 
+load-fixture:
+	symfony console doctrine:fixtures:load --env=test
 
+tests:
+	symfony console doctrine:database:drop --force --env=test || true
+	symfony console doctrine:database:create --env=test
+	symfony console doctrine:migrations:migrate -n --env=test
+	symfony console doctrine:fixtures:load -n --env=test
+	symfony php bin/phpunit $(MAKECMDGOALS)
 
 
