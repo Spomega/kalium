@@ -20,7 +20,7 @@ RUN a2ensite app.kalium.conf && \
     a2dissite default-ssl.conf
 
 # Enable Apache mod_rewrite
- RUN a2enmod rewrite
+RUN a2enmod rewrite
 
 # Install Composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer

@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <ruleset name="Kalium-CS">
 
-    <description>TS-API coding standard for PHP project</description>
+    <description>Kalium coding standard for PHP project</description>
     <config name="installed_paths" value="vendor/slevomat/coding-standard/"/>
     <rule ref="PSR12">
         <exclude name="Generic.Files.LineLength"/>
