@@ -1,36 +1,39 @@
 
 services:
-  app:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    container_name: kalium_app
-    ports:
-      - "8081:80"
-    volumes:
-      - .:/var/www/kalium
-    environment:
-      - '.env'
+  # app:
+  #   build:
+  #     context: .
+  #     dockerfile: Dockerfile
+  #   container_name: kalium_app
+  #   ports:
+  #     - "8081:80"
+  #   volumes:
+  #     - .:/var/www/kalium
+  #   environment:
+  #     - '.env'
+  #   networks:
+  #     - kalium_network
 
 ###> doctrine/doctrine-bundle ###
 
   database:
-    #image: postgres:${POSTGRES_VERSION:-16}-alpine
+    image: postgres:${POSTGRES_VERSION:-16}-alpine
 
 
-    #environment:
-      #POSTGRES_DB: ${POSTGRES_DB:-app}
-      # You should definitely change the password in production
-      # POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-admin}
-      # POSTGRES_USER: ${POSTGRES_USER:-app}
-
-    image: postgres:16-alpine
     environment:
-      POSTGRES_USER: main
-      POSTGRES_PASSWORD: main
-      POSTGRES DB: main
+      POSTGRES_DB: ${POSTGRES_DB:-app}
+      #You should definitely change the password in production
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-admin}
+      POSTGRES_USER: ${POSTGRES_USER:-app}
+
+    # image: postgres:16-alpine
+    # container_name: kalium_database
+    # environment:
+    #   POSTGRES_USER: main
+    #   POSTGRES_PASSWORD: main
+    #   POSTGRES DB: main
     ports:
-      - "5000:5432"
+      - "5433:5432"
     volumes:
       - database_data:/var/lib/postgresql/data:rw
       # You may use a bind-mounted host directory instead, so that it is harder to accidentally remove the volume and lose all your data!
@@ -40,4 +43,5 @@ services:
 volumes:
 ###> doctrine/doctrine-bundle ###
   database_data:
-###< doctrine/doctrine-bundle ###
+###< doctrine/doctrine-bundle ###sy
+  

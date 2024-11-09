@@ -41,7 +41,8 @@
 
             <nav class="bg-light border-bottom">
                 <div class="container">
-                    {{ render_esi(path('conference_header')) }}
+                    {# {{ render_esi(path('conference_header')) }} #}
+                    {{ include('conference/header.html.twig') }}
                 </div>
             </nav>
         </header>

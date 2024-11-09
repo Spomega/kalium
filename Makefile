@@ -20,7 +20,7 @@ symfony-up:
 	symfony server:start -d
 
 symfony-down:
-	symfony server-stop
+	symfony server:stop
 
 fix-code-violations:
 	vendor/bin/phpcbf --standard=ruleset.xml --extensions=php --tab-width=4 -sp src tests

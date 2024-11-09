@@ -81,4 +81,12 @@ class ConferenceController extends AbstractController
             'comment_form' => $form,
         ]);
     }
+
+
+    #[Route('/conference/header', name: 'conference_header')]
+    public function header(): Response
+    {
+        // Render the header part or return a Response
+        return $this->render('conference/header.html.twig');
+    }
 }
